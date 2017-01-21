@@ -12,33 +12,39 @@ import static android.graphics.Rect.intersects;
 
 public class Sharp {
 
-    WaveActivity.WaveView wave;
     Bitmap note;
+
     private int x, y, y2;
+
     private Rect Sharp;
+
     private Rect player;
 
-    public Sharp(WaveActivity.WaveView wave,Bitmap note, int x, int y){
-        this.wave = wave;
+    public Sharp(Bitmap note, int x, int y){
         this.note = note;
         this.x = x;
         this.y2 = y;
     }
+
     public boolean checkCollision(Rect player, Rect Sharp){
         this.player = player;
         this.Sharp = Sharp;
         return intersects(player, Sharp);
     }
+
     public Rect GetBounds(){
         return new Rect(this.x, this.y, this.x + note.getWidth(), this.y+note.getHeight());
     }
+
     public void Update(){
         //x-=wave.Speed;
         //y = note.getHeight() - Ground.height- note.getHeight()-y2;
     }
+
     public int returnX(){
         return x;
     }
+
     public void onDraw(Canvas canvas){
         Update();
         int wide = note.getWidth();

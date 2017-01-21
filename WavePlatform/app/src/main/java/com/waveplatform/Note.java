@@ -3,8 +3,9 @@ package com.waveplatform;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Rect;
 
-
+import static android.graphics.Rect.intersects;
 
 
 /**
@@ -30,6 +31,12 @@ public class Note extends Activity {
     private float length, height;
 
     private float screenX;
+
+    private Rect Sharp;
+
+    private Rect player;
+
+    private int x2, y2, y3;
 
     public Note(Bitmap n, int x, int y){
         screenX = x;
@@ -59,6 +66,15 @@ public class Note extends Activity {
     }
     public float getY(){
         return y;
+    }
+    public boolean checkCollision(Rect player, Rect Sharp) {
+        this.player = player;
+        this.Sharp = Sharp;
+        return intersects(player, Sharp);
+    }
+
+    public Rect GetBounds(){
+        return new Rect(this.x2, this.y2, this.x2 + note.getWidth(), this.y2 + note.getHeight());
     }
 
     public void setMovement(int state){
