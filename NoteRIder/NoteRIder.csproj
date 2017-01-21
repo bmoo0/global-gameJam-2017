@@ -102,6 +102,7 @@
     <Compile Include="Assets\Physics2DSideScroller\Scripts\World\WorldManager.cs" />
     <Compile Include="Assets\Platform\NewBehaviourScript.cs" />
     <Compile Include="Assets\Platform\PlatformMovement.cs" />
+    <Compile Include="Assets\PosMov.cs" />
     <Compile Include="Assets\platf.cs" />
   </ItemGroup>
   <ItemGroup>

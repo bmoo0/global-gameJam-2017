@@ -13,6 +13,6 @@ public class platf : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Vector2 vec = new Vector2(moveRight, 0f);
-        body.AddForce(vec * 10);
+        body.AddForce(vec * 5);
     }
 }
