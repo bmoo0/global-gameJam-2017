@@ -67,7 +67,7 @@ public class WaveActivity extends Activity {
             while (playing) {
                 long startTimeFrame = System.currentTimeMillis();
                 if (!paused)
-                    //update();//update movements
+                    update();//update movements
                 draw();//draw objects
                 timeThisFrame = System.currentTimeMillis() - startTimeFrame;
                 if (timeThisFrame >= 1)
@@ -76,7 +76,7 @@ public class WaveActivity extends Activity {
         }
 
         public void update() {
-
+            note.update(fps);
         }
 
         public void draw() {
@@ -113,7 +113,7 @@ public class WaveActivity extends Activity {
 
         public boolean onTouchEvent(MotionEvent motionEvent) {
             switch (motionEvent.getAction() & MotionEvent.ACTION_MASK) {
-                case MotionEvent.ACTION_BUTTON_PRESS:
+                case MotionEvent.ACTION_DOWN:
                     note.setMovement(2);
                     break;
                 case MotionEvent.ACTION_UP:
