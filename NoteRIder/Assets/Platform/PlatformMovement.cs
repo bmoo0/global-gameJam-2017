@@ -5,6 +5,7 @@ public class PlatformMovement: MonoBehaviour {
     public GameObject thePlatform;
     public Transform generationPoint;
     public float distanceBetween;
+    public double y;
 
     private float platformWidth;
 
@@ -13,15 +14,15 @@ public class PlatformMovement: MonoBehaviour {
     }
 
     void Update() {
-        double y = 0;
-        y = 1.5;
-        y = 3;
-        y = 4.5;
-
-        if (transform.position.x >= generationPoint.position.x - platformWidth)
+        
+         if (transform.position.x >= generationPoint.position.x - platformWidth)
         {
-           transform.position = new Vector2(transform.position.x + platformWidth + distanceBetween, transform.position.y);
-           Instantiate(thePlatform, transform.position, transform.rotation);
+            while (true)
+            {
+                y += 1.5;
+                transform.position = new Vector2(transform.position.x + platformWidth + distanceBetween, transform.position.y);
+                Instantiate(thePlatform, transform.position, transform.rotation);
+            }
         }
     }
 }
