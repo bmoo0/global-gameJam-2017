@@ -16,14 +16,14 @@ public class Platform extends Activity {
     private float screenY;
     private final float SPEED = 1000;
 
-    public Platform(double x, double y){
+    public Platform(float x, float y){
         length = 350;
         height = 100;
 
-        screenX = (float)x;
-        screenY = (float)y;
+        screenX = x;
+        screenY = y;
 
-        Platform = new RectF(screenX, screenY, length + (float)x, height + (float)y);
+        Platform = new RectF(screenX, screenY, length + x, height + y);
     }
     public RectF getPlatform(){
         return this.Platform;

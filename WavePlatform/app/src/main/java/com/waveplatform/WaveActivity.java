@@ -76,7 +76,7 @@ public class WaveActivity extends Activity {
         private void newPlatform(){
                 if (c > 8)
                     c = 0;
-                double y[] = {screenX, screenX-250, screenX-500, screenX-750, screenX-1000, screenX+750, screenX+500, screenX+250, screenX};
+                float y[] = {screenX, screenX-250, screenX-500, screenX-750, screenX-1000, screenX+750, screenX+500, screenX+250, screenX};
                 platform = new Platform(screenX + 400, y[c]);
                 c++;
                 platList.add(platform);
@@ -85,7 +85,6 @@ public class WaveActivity extends Activity {
 
         @Override
         public void run() {
-            Looper.prepare();
             while (playing) {
                 long startTimeFrame = System.currentTimeMillis();
                 if (!paused)
@@ -104,10 +103,12 @@ public class WaveActivity extends Activity {
                     platList.get(i).update(fps);
                 else if ((platList.get(i - 1).getPlatform().right - platList.get(i).getPlatform().left) > 350)
                     platList.get(i).update(fps);
-                if (platList.get(i).getPlatform().right < 0) {
+                if (platList.get(i).getPlatform().right <= 0) {
                     platList.remove(i);
                     newPlatform();
+
                 }
+
             }
 
         }
@@ -119,13 +120,11 @@ public class WaveActivity extends Activity {
                 canvas.drawColor(Color.argb(255,  26, 128, 182));
 
                 canvas.drawBitmap(note.getNote(), note.getX(), note.getY(), paint);
-                canvas.drawBitmap(halfRest.getHalfRest(), halfRest.getX(), halfRest.getY(), paint);
-                halfRest.update(fps);
-
-                for (int i = 0; i < platList.size(); i++){
-                    paint.setColor(Color.argb(r.nextInt(255), r.nextInt(255), r.nextInt(255), r.nextInt(255)));
+                //canvas.drawBitmap(halfRest.getHalfRest(), halfRest.getX(), halfRest.getY(), paint);
+                paint.setColor(Color.argb(r.nextInt(255), r.nextInt(255), r.nextInt(255), r.nextInt(255)));
+                for (int i = 0; i < platList.size(); i++)
                     canvas.drawRect(platList.get(i).getPlatform(), paint);
-                }
+
 
                 holder.unlockCanvasAndPost(canvas);
 
