@@ -1,8 +1,22 @@
 package com.waveplatform;
 
-/**
- * Created by Sam on 1/20/2017.
- */
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
-public class HalfRest {
+
+public class HalfRest extends Activity {
+    private int xPos;
+    private int yPos;
+    private Bitmap note;
+
+    HalfRest(int x, int y) {
+        xPos = x;
+        yPos = y;
+        //note = // image will go here;
+    }
+
+    Bitmap getNote() { return this.note; }
+
+    public void update() {}
 }
