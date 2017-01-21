@@ -25,9 +25,7 @@ public class Note extends Activity {
 
     private float x, y;
 
-    private final double GRAVITY = -9.81;
-
-    private final long SPEED = 1000;
+    private final long SPEED = 2000;
 
     private float length, height;
 
@@ -60,13 +58,13 @@ public class Note extends Activity {
 
     public void update(long fps){
         if (moving == UP){
-            y = y + 100;
+            y = y - 150;
             if (note.getHeight() >= 0)
                 y = y - 1;
         }
         if (moving == DOWN)
         {
-            y = y - SPEED/fps;
+            y = y + SPEED/fps;
         }
 
     }
