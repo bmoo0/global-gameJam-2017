@@ -43,6 +43,8 @@ public class WaveActivity extends Activity {
         private int score = 0;
         private int screenX;
         private int screenY;
+        ArrayList<Platform> platList = new ArrayList();
+        Random r = new Random(System.currentTimeMillis());
 
         Note note;
         Platform platform;
@@ -62,10 +64,17 @@ public class WaveActivity extends Activity {
             screenY = size.y;
 
             note = new Note(n, screenX, screenY);
-            double i = 0;
-            double radians = 0;
-            platform = new Platform(Math.toRadians(radians),Math.sin(i));
 
+        }
+
+        private void newPlatform(){
+            double i = screenY;
+            double radians = screenY - 400;
+            for (int j = 0; i < 30; j++) {
+                platform = new Platform(screenX + 400, radians);
+                platList.add(platform);
+                radians += 100;
+            }
         }
 
         @Override
@@ -83,6 +92,17 @@ public class WaveActivity extends Activity {
 
         public void update() {
             note.update(fps);
+            for (int i = 0; i < platList.size(); i++) {
+                if (i == 0)
+                    platList.get(i).update(fps);
+                else if ((platList.get(i - 1).getPlatform().right - platList.get(i).getPlatform().left) > 300)
+                    platList.get(i).update(fps);
+                if (platList.get(i).getPlatform().right < 0) {
+                    platList.remove(i);
+                    newPlatform();
+                }
+            }
+
         }
 
         public void draw() {
@@ -92,6 +112,11 @@ public class WaveActivity extends Activity {
                 canvas.drawColor(Color.argb(255,  26, 128, 182));
 
                 canvas.drawBitmap(note.getNote(), note.getX(), note.getY(), paint);
+
+                for (int i = 0; i < platList.size(); i++){
+                    paint.setColor(Color.argb(r.nextInt(255), r.nextInt(255), r.nextInt(255), r.nextInt(255)));
+                    canvas.drawRect(platList.get(i).getPlatform(), paint);
+                }
 
                 holder.unlockCanvasAndPost(canvas);
 

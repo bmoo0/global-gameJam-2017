@@ -30,5 +30,8 @@ public class Platform extends Activity {
     }
     public void update(float fps){
         screenX = screenX - SPEED/fps;
+
+        Platform.left = screenX;
+        Platform.right = screenX + length;
     }
 }
