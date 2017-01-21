@@ -14,7 +14,7 @@ public class Platform extends Activity {
     private float height;
     private float screenX;
     private float screenY;
-    private final float SPEED = 1000;
+    private final float SPEED = 2500;
 
     public Platform(float x, float y){
         length = 350;

@@ -85,6 +85,7 @@ public class WaveActivity extends Activity {
 
         @Override
         public void run() {
+            Looper.prepare();
             while (playing) {
                 long startTimeFrame = System.currentTimeMillis();
                 if (!paused)
@@ -121,7 +122,7 @@ public class WaveActivity extends Activity {
 
                 canvas.drawBitmap(note.getNote(), note.getX(), note.getY(), paint);
                 //canvas.drawBitmap(halfRest.getHalfRest(), halfRest.getX(), halfRest.getY(), paint);
-                paint.setColor(Color.argb(r.nextInt(255), r.nextInt(255), r.nextInt(255), r.nextInt(255)));
+                //paint.setColor(Color.argb(r.nextInt(255), r.nextInt(255), r.nextInt(255), r.nextInt(255)));
                 for (int i = 0; i < platList.size(); i++)
                     canvas.drawRect(platList.get(i).getPlatform(), paint);
 
