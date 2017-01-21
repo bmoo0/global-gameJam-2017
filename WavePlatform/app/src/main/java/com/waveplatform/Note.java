@@ -15,15 +15,13 @@ public class Note extends Activity {
 
     Bitmap note;
 
-    public final int LEFT = 1;
+    public final int STOP = 1;
 
-    public final int RIGHT = 2;
+    public final int UP = 2;
 
-    public final int UP = 3;
+    public final int DOWN = 3;
 
-    public final int DOWN = 4;
-
-    private int moving = RIGHT;
+    private int moving = STOP;
 
     private float x, y;
 
@@ -35,13 +33,10 @@ public class Note extends Activity {
 
     private float screenX;
 
-    public Note(Bitmap n){
-        length = 350;
-        height = 350;
-
+    public Note(Bitmap n, int x, int y){
         screenX = x;
 
-        this.x = x/2;
+        this.x = x/3 - (n.getWidth()/2);
         this.y = y-400;
 
         note = n;
@@ -64,7 +59,15 @@ public class Note extends Activity {
 
 
     public void update(long fps){
-
+        if (moving == UP){
+            y = y + 100;
+            if (note.getHeight() >= 0)
+                y = y - 1;
+        }
+        if (moving == DOWN)
+        {
+            y = y - SPEED/fps;
+        }
 
     }
 
