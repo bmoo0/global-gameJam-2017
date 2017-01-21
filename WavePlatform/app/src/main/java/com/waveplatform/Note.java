@@ -35,7 +35,7 @@ public class Note extends Activity {
 
     private float screenX;
 
-    public Note(int x, int y){
+    public Note(Bitmap n){
         length = 350;
         height = 350;
 
@@ -44,18 +44,27 @@ public class Note extends Activity {
         this.x = x/2;
         this.y = y-400;
 
-        note = BitmapFactory.decodeResource(this.getResources(), R.drawable.ball);
+        note = n;
 
     }
     public Bitmap getNote(){
         return this.note;
     }
+
+    public float getX(){
+        return x;
+    }
+    public float getY(){
+        return y;
+    }
+
     public void setMovement(int state){
         moving = state;
     }
 
 
     public void update(long fps){
+
 
     }
 
