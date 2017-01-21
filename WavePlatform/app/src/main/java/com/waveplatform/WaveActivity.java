@@ -41,6 +41,7 @@ public class WaveActivity extends Activity {
         private int screenX;
         private int screenY;
 
+        Note note;
 
         public WaveView(Context context) {
             super(context);
@@ -54,6 +55,8 @@ public class WaveActivity extends Activity {
 
             screenX = size.x;
             screenY = size.y;
+
+            note = new Note(screenX, screenY);
         }
 
         @Override
@@ -76,7 +79,11 @@ public class WaveActivity extends Activity {
         public void draw() {
             if (holder.getSurface().isValid()) {
                 canvas = holder.lockCanvas();
+
                 canvas.drawColor(Color.argb(255,  26, 128, 182));
+
+                //canvas.drawBitmap(note.getNote(), 300, 300, paint);
+
                 holder.unlockCanvasAndPost(canvas);
 
             }

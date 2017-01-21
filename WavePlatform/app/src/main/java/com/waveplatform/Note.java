@@ -1,12 +1,17 @@
 package com.waveplatform;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
+
+
 
 /**
  * Created by Sam on 1/20/2017.
  */
 
-public class Note {
+public class Note extends Activity {
 
     Bitmap note;
 
@@ -39,7 +44,7 @@ public class Note {
         this.x = x/2;
         this.y = y-400;
 
-        //note = new Bitmap();
+        note = BitmapFactory.decodeResource(this.getResources(), R.drawable.ball);
 
     }
     public Bitmap getNote(){
