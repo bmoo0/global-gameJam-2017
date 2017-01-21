@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.RectF;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
@@ -45,6 +46,7 @@ public class WaveActivity extends Activity {
 
         Note note;
         HalfRest halfRest;
+        Platform platform;
         Bitmap n = BitmapFactory.decodeResource(this.getResources(), R.drawable.ball);
 
         public WaveView(Context context) {
@@ -62,6 +64,10 @@ public class WaveActivity extends Activity {
 
             note = new Note(n, screenX, screenY);
             halfRest = new HalfRest(n, screenX+200,screenY);
+            double i = 0;
+            double radians = 0;
+            platform = new Platform(Math.toRadians(radians),Math.sin(i));
+
         }
 
         @Override
@@ -69,7 +75,7 @@ public class WaveActivity extends Activity {
             while (playing) {
                 long startTimeFrame = System.currentTimeMillis();
                 if (!paused)
-                    //update();//update movements
+                    update();//update movements
                 draw();//draw objects
                 timeThisFrame = System.currentTimeMillis() - startTimeFrame;
                 if (timeThisFrame >= 1)
@@ -78,6 +84,7 @@ public class WaveActivity extends Activity {
         }
 
         public void update() {
+            note.update(fps);
         }
 
         public void draw() {
@@ -116,8 +123,10 @@ public class WaveActivity extends Activity {
 
         public boolean onTouchEvent(MotionEvent motionEvent) {
             switch (motionEvent.getAction() & MotionEvent.ACTION_MASK) {
-                case MotionEvent.ACTION_BUTTON_PRESS:
+                case MotionEvent.ACTION_DOWN:
                     note.setMovement(2);
+                    //if (motionEvent.getDownTime() >1000);
+                        //note.setMovement(3);
                     break;
                 case MotionEvent.ACTION_UP:
                     note.setMovement(3);
