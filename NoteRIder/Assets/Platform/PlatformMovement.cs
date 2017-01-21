@@ -16,7 +16,7 @@ public class PlatformMovement: MonoBehaviour {
         
          if (transform.position.x < generationPoint.position.x)
         {
-                
+                       
                 transform.position = new Vector2(transform.position.x + platformWidth + distanceBetween, transform.position.y);
                 Instantiate(thePlatform, transform.position, transform.rotation);
         }

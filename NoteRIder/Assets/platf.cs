@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class platf : MonoBehaviour {
@@ -13,6 +12,6 @@ public class platf : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Vector2 vec = new Vector2(moveRight, 0f);
-        body.AddForce(vec * 1);
+        body.AddForce(vec * 10);
     }
 }

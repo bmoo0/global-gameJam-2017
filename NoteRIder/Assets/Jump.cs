@@ -34,7 +34,7 @@ public class Jump : MonoBehaviour {
 		}
 		if (Input.GetKeyDown (KeyCode.RightArrow)) {
 			Vector2 rVec = new Vector2 (right, 0f);
-			body.AddForce (rVec * 10);
+			body.AddForce (rVec * 1);
 		}
 	}
 }
