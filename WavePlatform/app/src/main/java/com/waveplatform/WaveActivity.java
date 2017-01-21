@@ -35,7 +35,7 @@ public class WaveActivity extends Activity {
         Thread gameThread = null; //game thread
         SurfaceHolder holder;
         volatile boolean playing;//are we playing?
-        boolean paused = false;
+        boolean paused = true;
         Canvas canvas;
         Paint paint;
         long fps;
@@ -74,9 +74,9 @@ public class WaveActivity extends Activity {
         }
 
         private void newPlatform(){
-                if (c < 10);
+                if (c > 8)
                     c = 0;
-                double y[] = {0, 100, 200, 300, 400, 500, 400, 300, 200, 100, 0};
+                double y[] = {screenX, screenX-250, screenX-500, screenX-750, screenX-1000, screenX+750, screenX+500, screenX+250, screenX};
                 platform = new Platform(screenX + 400, y[c]);
                 c++;
                 platList.add(platform);
@@ -85,6 +85,7 @@ public class WaveActivity extends Activity {
 
         @Override
         public void run() {
+            Looper.prepare();
             while (playing) {
                 long startTimeFrame = System.currentTimeMillis();
                 if (!paused)
@@ -101,7 +102,7 @@ public class WaveActivity extends Activity {
             for (int i = 0; i < platList.size(); i++) {
                 if (i == 0)
                     platList.get(i).update(fps);
-                else if ((platList.get(i - 1).getPlatform().right - platList.get(i).getPlatform().left) > 300)
+                else if ((platList.get(i - 1).getPlatform().right - platList.get(i).getPlatform().left) > 350)
                     platList.get(i).update(fps);
                 if (platList.get(i).getPlatform().right < 0) {
                     platList.remove(i);
@@ -153,6 +154,7 @@ public class WaveActivity extends Activity {
         public boolean onTouchEvent(MotionEvent motionEvent) {
             switch (motionEvent.getAction() & MotionEvent.ACTION_MASK) {
                 case MotionEvent.ACTION_DOWN:
+                    paused = false;
                     note.setMovement(2);
                     //if (motionEvent.getDownTime() >1000);
                         //note.setMovement(3);
