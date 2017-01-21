@@ -12,16 +12,14 @@ import static android.graphics.Rect.intersects;
 
 public class Sharp {
 
-    //WaveView wave;
+    WaveActivity.WaveView wave;
     Bitmap note;
     private int x, y, y2;
     private Rect Sharp;
     private Rect player;
 
-    /*WaveView wave,*/
-
-    public Sharp(Bitmap note, int x, int y){
-        //this.wave = wave;
+    public Sharp(WaveActivity.WaveView wave,Bitmap note, int x, int y){
+        this.wave = wave;
         this.note = note;
         this.x = x;
         this.y2 = y;

@@ -48,6 +48,7 @@ public class WaveActivity extends Activity {
         HalfRest halfRest;
         Platform platform;
         Bitmap n = BitmapFactory.decodeResource(this.getResources(), R.drawable.ball);
+        Bitmap Sharp;
 
         public WaveView(Context context) {
             super(context);
