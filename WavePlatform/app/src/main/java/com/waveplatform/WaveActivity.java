@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.RectF;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
@@ -44,6 +45,7 @@ public class WaveActivity extends Activity {
         private int screenY;
 
         Note note;
+        Platform platform;
         Bitmap n = BitmapFactory.decodeResource(this.getResources(), R.drawable.ball);
 
         public WaveView(Context context) {
@@ -60,6 +62,10 @@ public class WaveActivity extends Activity {
             screenY = size.y;
 
             note = new Note(n, screenX, screenY);
+            double i = 0;
+            double radians = 0;
+            platform = new Platform(Math.toRadians(radians),Math.sin(i));
+
         }
 
         @Override
@@ -115,6 +121,8 @@ public class WaveActivity extends Activity {
             switch (motionEvent.getAction() & MotionEvent.ACTION_MASK) {
                 case MotionEvent.ACTION_DOWN:
                     note.setMovement(2);
+                    //if (motionEvent.getDownTime() >1000);
+                        //note.setMovement(3);
                     break;
                 case MotionEvent.ACTION_UP:
                     note.setMovement(3);
