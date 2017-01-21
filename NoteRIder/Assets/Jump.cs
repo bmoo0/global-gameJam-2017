@@ -7,9 +7,10 @@ public class Jump : MonoBehaviour {
 	public float jump;
 	public float right;
 	private bool canJump = true;
+    public static float distanceTraveled;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		body = gameObject.GetComponent<Rigidbody2D> ();
 
 		
@@ -19,12 +20,14 @@ public class Jump : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		// once touched a platform allow player to jump again
-		if (body.velocity.y == 0) {
+        transform.Translate(5f * Time.deltaTime, 0f, 0f);
+        distanceTraveled = transform.localPosition.x;
+        // once touched a platform allow player to jump again
+        if (body.velocity.y == 0) {
 			canJump = true;
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space) && this.canJump == true) {
+		if (Input.GetKeyDown (KeyCode.Space) || Input.GetMouseButtonDown(0) && this.canJump == true) {
 			Vector2 vec = new Vector2 (0f, jump);
 			body.AddForce (vec * 10);
 			canJump = false;
