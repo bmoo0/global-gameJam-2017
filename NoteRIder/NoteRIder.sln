@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{40A18A1D-2021-79E5-D613-38EB262B25B2}") = "NoteRIder", "Assembly-CSharp.csproj", "{7C79156B-66F2-A524-7051-E445FA3DDE0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C79156B-66F2-A524-7051-E445FA3DDE0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C79156B-66F2-A524-7051-E445FA3DDE0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C79156B-66F2-A524-7051-E445FA3DDE0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C79156B-66F2-A524-7051-E445FA3DDE0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

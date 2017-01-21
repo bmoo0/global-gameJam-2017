@@ -34,7 +34,7 @@ public class WaveActivity extends Activity {
     class WaveView extends SurfaceView implements Runnable {
         Thread gameThread = null; //game thread
         SurfaceHolder holder;
-        volatile boolean playing;//are we playing?
+        volatile boolean playing; //are we playing?
         boolean paused = true;
         Canvas canvas;
         Paint paint;

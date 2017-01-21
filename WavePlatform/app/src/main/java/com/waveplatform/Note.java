@@ -40,6 +40,16 @@ public class Note extends Activity {
         note = n;
 
     }
+
+    public float[] getArea() {
+        float xVal = this.x - this.height;
+        float yVal = this.y + this.length;
+        float[] area = new float[2];
+        area[0] = xVal;
+        area[1] = yVal;
+        return area;
+    }
+
     public Bitmap getNote(){
         return this.note;
     }
