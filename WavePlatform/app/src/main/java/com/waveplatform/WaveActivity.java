@@ -2,6 +2,8 @@ package com.waveplatform;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -42,6 +44,7 @@ public class WaveActivity extends Activity {
         private int screenY;
 
         Note note;
+        Bitmap n = BitmapFactory.decodeResource(this.getResources(), R.drawable.ball);
 
         public WaveView(Context context) {
             super(context);
@@ -56,7 +59,7 @@ public class WaveActivity extends Activity {
             screenX = size.x;
             screenY = size.y;
 
-            note = new Note(screenX, screenY);
+            note = new Note(n);
         }
 
         @Override
@@ -82,7 +85,7 @@ public class WaveActivity extends Activity {
 
                 canvas.drawColor(Color.argb(255,  26, 128, 182));
 
-                //canvas.drawBitmap(note.getNote(), 300, 300, paint);
+                canvas.drawBitmap(note.getNote(), 300, 300, paint);
 
                 holder.unlockCanvasAndPost(canvas);
 
