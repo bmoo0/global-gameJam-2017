@@ -112,7 +112,14 @@ public class WaveActivity extends Activity {
         }
 
         public boolean onTouchEvent(MotionEvent motionEvent) {
-
+            switch (motionEvent.getAction() & MotionEvent.ACTION_MASK) {
+                case MotionEvent.ACTION_BUTTON_PRESS:
+                    note.setMovement(2);
+                    break;
+                case MotionEvent.ACTION_UP:
+                    note.setMovement(3);
+                    break;
+            }
         return true;
     }
 }
