@@ -31,7 +31,7 @@ public class WaveActivity extends Activity {
         Thread gameThread = null; //game thread
         SurfaceHolder holder;
         volatile boolean playing;//are we playing?
-        boolean paused = true;
+        boolean paused = false;
         Canvas canvas;
         Paint paint;
         long fps;
@@ -40,7 +40,6 @@ public class WaveActivity extends Activity {
         private int score = 0;
         private int screenX;
         private int screenY;
-        private int rx;
 
 
         public WaveView(Context context) {
@@ -76,7 +75,10 @@ public class WaveActivity extends Activity {
 
         public void draw() {
             if (holder.getSurface().isValid()) {
-                canvas.drawColor(Color.WHITE);
+                canvas = holder.lockCanvas();
+                canvas.drawColor(Color.argb(255,  26, 128, 182));
+                holder.unlockCanvasAndPost(canvas);
+
             }
         }
 

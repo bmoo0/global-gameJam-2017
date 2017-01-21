@@ -39,10 +39,10 @@ public class Note {
         this.x = x/2;
         this.y = y-400;
 
-        note = new Bitmap();
+        //note = new Bitmap();
 
     }
-    public Bitmap getBlock(){
+    public Bitmap getNote(){
         return this.note;
     }
     public void setMovement(int state){
