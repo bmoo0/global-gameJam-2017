@@ -44,6 +44,7 @@ public class WaveActivity extends Activity {
         private int screenY;
 
         Note note;
+        HalfRest halfRest;
         Bitmap n = BitmapFactory.decodeResource(this.getResources(), R.drawable.ball);
 
         public WaveView(Context context) {
@@ -60,6 +61,7 @@ public class WaveActivity extends Activity {
             screenY = size.y;
 
             note = new Note(n, screenX, screenY);
+            halfRest = new HalfRest(n, screenX+200,screenY);
         }
 
         @Override
@@ -76,7 +78,6 @@ public class WaveActivity extends Activity {
         }
 
         public void update() {
-
         }
 
         public void draw() {
@@ -86,6 +87,8 @@ public class WaveActivity extends Activity {
                 canvas.drawColor(Color.argb(255,  26, 128, 182));
 
                 canvas.drawBitmap(note.getNote(), note.getX(), note.getY(), paint);
+                canvas.drawBitmap(halfRest.getHalfRest(), halfRest.getX(), halfRest.getY(), paint);
+                halfRest.update(fps);
 
                 holder.unlockCanvasAndPost(canvas);
 
