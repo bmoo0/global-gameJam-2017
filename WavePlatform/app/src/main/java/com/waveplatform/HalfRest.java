@@ -6,17 +6,24 @@ import android.graphics.BitmapFactory;
 
 
 public class HalfRest extends Activity {
-    private int xPos;
-    private int yPos;
-    private Bitmap note;
+    private float xPos;
+    private float yPos;
+    private Bitmap halfRest;
+    private final int SPEED = 1000;
 
-    HalfRest(int x, int y) {
-        xPos = x;
-        yPos = y;
-        //note = // image will go here;
+    HalfRest(Bitmap n,float x, float y) {
+        xPos = x/3 - (n.getWidth()/2);
+        yPos = y - 400;
+        halfRest = n;
     }
 
-    Bitmap getNote() { return this.note; }
+    Bitmap getHalfRest() { return this.halfRest; }
 
-    public void update() {}
+    public void update(long fps) {
+        if(fps == 0) fps = 1;
+        xPos -= 100;
+    }
+
+    public float getX() { return this.xPos; }
+    public float getY() { return this.yPos; }
 }

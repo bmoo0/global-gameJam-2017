@@ -55,7 +55,6 @@ public class Note extends Activity {
         moving = state;
     }
 
-
     public void update(long fps){
         if (moving == UP){
             y = y - 150;
@@ -68,6 +67,4 @@ public class Note extends Activity {
         }
 
     }
-
-
 }
