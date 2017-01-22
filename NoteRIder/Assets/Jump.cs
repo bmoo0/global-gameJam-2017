@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour {
 	private Rigidbody2D body;
+    public AudioSource playerJump;
 	public float jump;
 	public float right;
 	private bool canJump = true;
@@ -27,9 +28,10 @@ public class Jump : MonoBehaviour {
 			canJump = true;
 		}
 
-		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetMouseButtonDown(0) && this.canJump == true) {
-			Vector2 vec = new Vector2 (0f, jump);
+		if (Input.GetKeyDown (KeyCode.UpArrow) && this.canJump == true) {
+			Vector2 vec = new Vector2 (12f, jump);
 			body.AddForce (vec * 10);
+            playerJump.Play();
 			canJump = false;
 		}
 		if (Input.GetKeyDown (KeyCode.RightArrow)) {
