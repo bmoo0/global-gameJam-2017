@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
                 CheesyBody.AddForce(new Vector2(0, 6), ForceMode2D.Impulse);
                 GetComponent<AudioSource>().Play();
             }
-            JumpActivated = false;
+            JumpActivated = true;
         }
     }
 

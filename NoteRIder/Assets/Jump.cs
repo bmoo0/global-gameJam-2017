@@ -27,14 +27,19 @@ public class Jump : MonoBehaviour {
 			canJump = true;
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space) || Input.GetMouseButtonDown(0) && this.canJump == true) {
+		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetMouseButtonDown(0) && this.canJump == true) {
 			Vector2 vec = new Vector2 (0f, jump);
 			body.AddForce (vec * 10);
 			canJump = false;
 		}
 		if (Input.GetKeyDown (KeyCode.RightArrow)) {
 			Vector2 rVec = new Vector2 (right, 0f);
-			body.AddForce (rVec * 1);
+			body.AddForce (rVec * 10);
 		}
-	}
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            Vector2 rVec = new Vector2(-right, 0f);
+            body.AddForce(rVec * 10);
+        }
+    }
 }

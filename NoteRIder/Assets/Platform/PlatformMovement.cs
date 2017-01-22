@@ -3,9 +3,9 @@
 public class PlatformMovement: MonoBehaviour {
     public GameObject thePlatform;
     public Transform generationPoint;
-    public float distanceBetween;
 
     private float platformWidth;
+
 
     void Start() {
         platformWidth = thePlatform.GetComponent<BoxCollider2D>().size.x;
@@ -13,7 +13,8 @@ public class PlatformMovement: MonoBehaviour {
     }
 
     void Update() {
-        
+        float distanceBetween = Random.Range(7f, 15f);
+
          if (transform.position.x < generationPoint.position.x)
         {
                        
