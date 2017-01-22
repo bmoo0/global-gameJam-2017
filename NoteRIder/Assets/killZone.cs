@@ -5,16 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class killZone : MonoBehaviour {
 
-	Transform ball;
+    private Rigidbody2D body;
+    public float right;
 
-	// Use this for initialization
-	void Start () {
-		ball = GameObject.Find("Circle").transform;
+    //Transform ball;
+
+    // Use this for initialization
+    void Start () {
+		//ball = GameObject.Find("Circle").transform;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = new Vector3 (ball.position.x, transform.position.y, transform.position.z);
+        
+            Vector2 rVec = new Vector2(right, 0f);
+            body.AddForce(rVec * 10);
+        //transform.position = new Vector3 (ball.position.x, transform.position.y, transform.position.z);
     }
 
 	void OnTriggerEnter2D(Collider2D col) {
