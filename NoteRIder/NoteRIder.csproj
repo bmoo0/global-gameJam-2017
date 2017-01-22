@@ -107,6 +107,7 @@
     <Compile Include="Assets\killZon.cs" />
     <Compile Include="Assets\killZone.cs" />
     <Compile Include="Assets\platf.cs" />
+    <Compile Include="Assets\powerSpawn.cs" />
     <Compile Include="Assets\sharpPower.cs" />
   </ItemGroup>
   <ItemGroup>
