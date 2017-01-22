@@ -28,7 +28,7 @@ public class Jump : MonoBehaviour {
 			canJump = true;
 		}
 
-		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetMouseButtonDown(0) && this.canJump == true) {
+		if (Input.GetKeyDown (KeyCode.UpArrow) && this.canJump == true) {
 			Vector2 vec = new Vector2 (12f, jump);
 			body.AddForce (vec * 10);
             playerJump.Play();
