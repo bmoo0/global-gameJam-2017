@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Jump : MonoBehaviour {
 	private Rigidbody2D body;
@@ -10,19 +8,22 @@ public class Jump : MonoBehaviour {
     public AudioSource powerDown;
     public AudioSource lose;
     public TextMesh text;
+    public Sprite jumps;
+    public Sprite stands;
 	public float jump;
 	public float right;
-    public Sprite jumpSprite;
 	private bool canJump = true;
     public static float distanceTraveled;
     public int points = 0;
 
-    
+    private SpriteRenderer spriteRenderer;
 
     // Use this for initialization
     void Start () {
         body = gameObject.GetComponent<Rigidbody2D> ();
-    
+        spriteRenderer = GetComponent<SpriteRenderer>(); 
+        if (spriteRenderer.sprite == null) 
+            spriteRenderer.sprite = stands;
 
     }		
 
@@ -40,6 +41,7 @@ public class Jump : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.UpArrow) && this.canJump == true) {
 			Vector2 vec = new Vector2 (12f, jump);
 			body.AddForce (vec * 10);
+            spriteRenderer.sprite = jumps;
             playerJump.Play();
             canJump = false;
 		}
@@ -76,6 +78,7 @@ public class Jump : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Platform")
         {
+            spriteRenderer.sprite = stands;
             points++;  
         }
     }

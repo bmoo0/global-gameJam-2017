@@ -75,47 +75,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Death.cs" />
     <Compile Include="Assets\Jump.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Disable.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Enemies\Bouncer.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Enemies\Enemies.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Enemies\EnemiesFactory.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Enemies\Ghost.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Enemies\Gigantor.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Enemies\Lush.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Enemies\Torque.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Enemies\Tweaker.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Parallax\BackgroundTile.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Parallax\DarkenCycle.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Parallax\OvercastCycle.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Parallax\ParallaxController.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Player\AttackController.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Player\PlayerController.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Player\PlayerState.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Player\ProjectileController.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\Player\StompController.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\World\CameraController.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\World\GameOverManager.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\World\GameStartManager.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\World\HeadsUpDisplay.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\World\PlatformFactory.cs" />
-    <Compile Include="Assets\Physics2DSideScroller\Scripts\World\WorldManager.cs" />
     <Compile Include="Assets\Platform\NewBehaviourScript.cs" />
     <Compile Include="Assets\Platform\PlatformDestruction.cs" />
     <Compile Include="Assets\Platform\PlatformMovement.cs" />
-    <Compile Include="Assets\PosMov.cs" />
     <Compile Include="Assets\Power.cs" />
     <Compile Include="Assets\Scroll.cs" />
+    <Compile Include="Assets\Start.cs" />
     <Compile Include="Assets\fall.cs" />
-    <Compile Include="Assets\killZon.cs" />
     <Compile Include="Assets\killZone.cs" />
     <Compile Include="Assets\platf.cs" />
-    <Compile Include="Assets\platformDestory.cs" />
     <Compile Include="Assets\powerSpawn.cs" />
+    <Compile Include="Assets\rest.cs" />
     <Compile Include="Assets\sharpPower.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Physics2DSideScroller\README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
