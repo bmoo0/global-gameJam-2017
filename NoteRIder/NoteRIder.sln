@@ -1,7 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteRIder", "NoteRIder.csproj", "{83CFF3F2-097F-F660-4C73-D718FC1C228D}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{40A18A1D-2021-79E5-D613-38EB262B25B2}") = "NoteRIder", "Assembly-CSharp.csproj", "{7C79156B-66F2-A524-7051-E445FA3DDE0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{83CFF3F2-097F-F660-4C73-D718FC1C228D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{83CFF3F2-097F-F660-4C73-D718FC1C228D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{83CFF3F2-097F-F660-4C73-D718FC1C228D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83CFF3F2-097F-F660-4C73-D718FC1C228D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C79156B-66F2-A524-7051-E445FA3DDE0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C79156B-66F2-A524-7051-E445FA3DDE0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C79156B-66F2-A524-7051-E445FA3DDE0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C79156B-66F2-A524-7051-E445FA3DDE0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
