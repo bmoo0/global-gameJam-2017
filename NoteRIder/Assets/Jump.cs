@@ -9,10 +9,10 @@ public class Jump : MonoBehaviour {
 	public float right;
 	private bool canJump = true;
     public static float distanceTraveled;
-
+    
     // Use this for initialization
     void Start () {
-		body = gameObject.GetComponent<Rigidbody2D> ();
+        body = gameObject.GetComponent<Rigidbody2D> ();
 
 		
 	}		
