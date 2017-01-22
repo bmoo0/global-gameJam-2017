@@ -15,7 +15,7 @@ public class killZone : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.position = new Vector3 (ball.position.x, transform.position.y, transform.position.z);
-	}
+    }
 
 	void OnTriggerEnter2D(Collider2D col) {
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);

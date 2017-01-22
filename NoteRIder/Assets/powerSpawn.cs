@@ -26,4 +26,5 @@ public class powerSpawn : MonoBehaviour {
             c++;      
         }
     }
+
 }
